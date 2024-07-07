@@ -1,0 +1,47 @@
+<c-row>
+    <c-col xs>
+      <c-card class="mb-4">
+        <c-card-body>
+          <table
+            [hover]="true"
+            [responsive]="true"
+            [striped]="true"
+            align="middle"
+            cTable
+            class="mb-0 border"
+          >
+            <thead class="text-nowrap text-truncate">
+            <tr>
+              <th class="bg-body-tertiary text-center">SI NO</th>
+              <th class="bg-body-tertiary text-center">Status</th>
+              <th class="bg-body-tertiary text-center">ProjectId</th>
+              <th class="bg-body-tertiary text-center">Time</th>
+              <th class="bg-body-tertiary text-center">Link</th>
+            </tr>
+        </thead>
+
+            <tbody>
+              @for (deal of deals; track deal.id; let i = $index) {
+                <tr>
+                  <td class="text-center">
+                        <div>{{i+1}}</div>
+                      </td>
+                  <td class="text-center">
+                    <div>{{ deal.status}}</div>
+                  </td>
+                  <td class="text-center">
+                    <div>{{ deal.projectId}}</div>
+                  </td>
+                  <td class="text-center">
+                    <div>{{ deal.time}}</div>
+                  </td>
+                  <td class="text-center">
+                    <div><a href="{{ deal.link}}">click to join</a></div>
+                  </td>
+              }
+            </tbody>
+          </table>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>

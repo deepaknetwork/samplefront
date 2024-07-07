@@ -1,0 +1,15 @@
+<c-row>
+    <c-col *ngFor="let item of deals; index as i" [lg]="5">
+        <c-card   textColor="primary" class="mb-5">
+        <c-card-header>{{ item.id }}</c-card-header>
+        <c-card-body>
+          <h5 cCardTitle>{{ item.state }}</h5>
+          <p cCardText>
+            {{ item.discription }}
+          </p>
+          <button [color]="colors[i % 7].color"  (click)="viewproject(item)" cButton>View more</button>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+  

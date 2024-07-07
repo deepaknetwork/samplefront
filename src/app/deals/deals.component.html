@@ -1,0 +1,71 @@
+  <!-- <c-row>
+    <c-col xs>
+      <c-card class="mb-4">
+        <c-card-body>
+          <table
+            [hover]="true"
+            [responsive]="true"
+            [striped]="true"
+            align="middle"
+            cTable
+            class="mb-0 border"
+          >
+            <thead class="text-nowrap text-truncate">
+            <tr>
+              <th class="bg-body-tertiary text-center">SI NO</th>
+              <th class="bg-body-tertiary text-center">State</th>
+              <th class="bg-body-tertiary text-center">Discription</th>
+              <th class="bg-body-tertiary text-center">Contact Medium</th>
+            </tr>
+            </thead>
+            <tbody>
+              @for (deal of deals; track deal.id; let i = $index) {
+                <tr>
+                  <td class="text-center">
+                        <div>{{i+1}}</div>
+                      </td>
+                  <td class="text-center">
+                    <div>{{ deal.state}}</div>
+                  </td>
+                  <td class="text-center">
+                    <div>{{ deal.discription}}</div>
+                  </td>
+                  <td class="text-center">
+                    <div>{{ deal.contactMedium}}</div>
+                  </td>
+              }
+            </tbody>
+          </table>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row> -->
+  <c-row style="margin-bottom: 8vh;">
+    <c-col  [lg]="6">
+      <c-card color="light"
+              class="mb-3">
+        <c-card-header>NEW DEAL</c-card-header>
+        <c-card-body class="bg-gradient">
+          <h5 cCardTitle></h5>
+          <p cCardText>give us your imagination, we bring it to reality
+          </p>
+          <button color="light" (click)="newdeal()" cButton class="shadow">Make new deal</button>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+  <c-row>
+    <c-col *ngFor="let item of deals; index as i" [lg]="4">
+      <c-card [color]="colors[i % 7].color"
+              class="mb-3">
+        <c-card-header>{{item.id}}</c-card-header>
+        <c-card-body class="bg-gradient">
+          <h5 cCardTitle>{{item.state}}</h5>
+          <p cCardText>
+            {{item.discription}}
+          </p>
+          <button [color]="colors[i % 7].color" (click)="viewdeal(item)" cButton class="shadow">View details</button>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>

@@ -1,0 +1,64 @@
+<section class="vh-80" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-6 mb-4 mb-lg-0">
+          <div class="card mb-3" style="border-radius: .5rem;">
+            <div class="row g-0">
+                <!-- {
+                    "id": "a@gmail.com",
+                    "name": "a",
+                    "phone": 9585010400,
+                    "password": "a",
+                    "isClient": true
+                } -->
+              <div class="col-md-4 gradient-custom text-center text-white"
+                style="display: flex; flex-direction: column; justify-content: center; border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                <h5>{{userData.name}}</h5>
+                <p>{{ userData.isClient ? 'Client' : 'Guest' }}</p>
+                <i class="far fa-edit mb-5"></i>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <h6>Information</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Email</h6>
+                      <p class="text-muted">{{userData.id}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Phone</h6>
+                      <p class="text-muted">{{userData.phone}}</p>
+                    </div>
+                  </div>
+                  <h6>Services</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                      <h6>Deals</h6>
+                      <p class="text-muted">{{deals}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <h6>Projects</h6>
+                      <p class="text-muted">{{projects}}</p>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <h6>Calls</h6>
+                        <p class="text-muted">{{calls}}</p>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h6>Meets</h6>
+                        <p class="text-muted">{{meets}}</p>
+                      </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <button class="btn btn-primary"> Logout</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

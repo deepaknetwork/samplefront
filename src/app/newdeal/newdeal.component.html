@@ -1,0 +1,74 @@
+<section class="vh-100 bg-image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">MAKE A NEW DEAL</h2>
+  
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                  <div data-mdb-input-init class="form-outline mb-2">
+                    <label class="form-label" for="form3Example1cg">Description</label>
+                    <textarea id="form3Example1cg" class="form-control" formControlName="discription"></textarea>
+                  </div>
+  
+                  <div data-mdb-input-init class="form-outline mb-2">
+                    <label class="form-label" for="formSingleExample3cg">Platform Selection</label>
+                    <select id="formSingleExample3cg" class="form-control" multiple formControlName="platforms">
+                      <option value="Mobile">MOBILE</option>
+                      <option value="Web">WEB</option>
+                      <option value="Desktop">DESKTOP</option>
+                      <option value="Software">SOFTWARE</option>
+                    </select>
+                  </div>
+  
+                  <div data-mdb-input-init class="form-outline mb-2">
+                    <label class="form-label" for="form3Example3cg">Technologies</label>
+                    <select id="form3Example3cg" class="form-control" multiple formControlName="technologies">
+                      <option value="React">REACT</option>
+                      <option value="Angular">ANGULAR</option>
+                      <option value="Express">EXPRESS</option>
+                      <option value="Spring Boot">SPRING BOOT</option>
+                    </select>
+                  </div>
+  
+                  <div data-mdb-input-init class="form-outline mb-2">
+                    <label class="form-label" for="form3Example4cg">Integrations</label>
+                    <select id="form3Example4cg" class="form-control" multiple formControlName="integrations">
+                      <option value="Other API">OTHER API</option>
+                      <option value="Social Media">SOCIAL MEDIA</option>
+                      <option value="Own Services">OWN SERVICES</option>
+                    </select>
+                  </div>
+  
+                  <div data-mdb-input-init class="form-outline mb-2">
+                    <label class="form-label" for="form3Example5cg">Stakeholders</label>
+                    <select id="form3Example5cg" class="form-control" multiple formControlName="stakeholders">
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
+                    </select>
+                  </div>
+  
+                  <div data-mdb-input-init class="form-outline mb-2">
+                    <label class="form-label" for="form3Example6cg">Contact Medium</label>
+                    <select id="form3Example6cg" class="form-control" formControlName="contactMedium">
+                      <option value="Call">Call</option>
+                      <option value="Meet">Meet</option>
+                    </select>
+                  </div>
+  
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success btn-block gradient-custom-4 text-body">Make</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
