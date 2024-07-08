@@ -16,9 +16,9 @@ export class CallsComponent implements OnInit{
   deals: any[] = [];
   constructor( private http: HttpClient) {}
   ngOnInit(): void {
-    const userDetail = { id:localStorage.getItem("anorgcustomerid") };
+    //const userDetail = { id:localStorage.getItem("anorgcustomerid") };
 
-    this.http.post<any[]>('https://localhost:7159/customer/calls', userDetail)
+    this.http.get<any[]>('https://localhost:7159/admin/calls')
       .subscribe(
         response => {
           this.deals = response;

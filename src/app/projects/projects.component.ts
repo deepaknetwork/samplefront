@@ -8,7 +8,7 @@ import { ButtonDirective, CardBodyComponent, CardComponent, CardFooterComponent,
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [HttpClientModule,RowComponent, NgFor, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, CardTitleDirective, CardTextDirective, ButtonDirective],
+  imports: [HttpClientModule,TableDirective,CommonModule,RowComponent, NgFor, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, CardTitleDirective, CardTextDirective, ButtonDirective],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -23,9 +23,9 @@ export class ProjectsComponent implements OnInit{
     { color: 'info', textColor: 'info' },];
   constructor( private http: HttpClient) {}
   ngOnInit(): void {
-    const userDetail = { id:localStorage.getItem("anorgcustomerid") };
+    //const userDetail = { id:localStorage.getItem("anorgcustomerid") };
 
-    this.http.post<any[]>('https://localhost:7159/customer/projects', userDetail)
+    this.http.get<any[]>('https://localhost:7159/admin/projects')
       .subscribe(
         response => {
           this.deals = response;

@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-deals',
   standalone: true,
-  imports: [HttpClientModule,RowComponent, NgFor, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, CardTitleDirective, CardTextDirective, ButtonDirective],
+  imports: [HttpClientModule,CommonModule,TableDirective,RowComponent, NgFor, ColComponent, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, CardTitleDirective, CardTextDirective, ButtonDirective],
   templateUrl: './deals.component.html',
   styleUrl: './deals.component.scss'
 })
@@ -23,9 +23,9 @@ export class DealsComponent implements OnInit{
     { color: 'info', textColor: 'info' },];
   constructor( private http: HttpClient,private router:Router) {}
   ngOnInit(): void {
-    const userDetail = { id:localStorage.getItem("anorgcustomerid") };
+    // const userDetail = { id:localStorage.getItem("anorgcustomerid") };
 
-    this.http.post<any[]>('https://localhost:7159/customer/projectdeals', userDetail)
+    this.http.get<any[]>('https://localhost:7159/admin/projectdeals')
       .subscribe(
         response => {
           this.deals = response;

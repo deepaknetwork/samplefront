@@ -1,4 +1,4 @@
-  <!-- <c-row>
+  <c-row>
     <c-col xs>
       <c-card class="mb-4">
         <c-card-body>
@@ -20,7 +20,7 @@
             </thead>
             <tbody>
               @for (deal of deals; track deal.id; let i = $index) {
-                <tr>
+                <tr (click)="viewdeal(deal)">
                   <td class="text-center">
                         <div>{{i+1}}</div>
                       </td>
@@ -39,8 +39,8 @@
         </c-card-body>
       </c-card>
     </c-col>
-  </c-row> -->
-  <c-row style="margin-bottom: 8vh;">
+  </c-row>
+  <!-- <c-row style="margin-bottom: 8vh;">
     <c-col  [lg]="6">
       <c-card color="light"
               class="mb-3">
@@ -68,4 +68,4 @@
         </c-card-body>
       </c-card>
     </c-col>
-  </c-row>
+  </c-row> -->

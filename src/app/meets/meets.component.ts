@@ -14,9 +14,9 @@ export class MeetsComponent implements OnInit {
   deals: any[] = [];
   constructor( private http: HttpClient) {}
   ngOnInit(): void {
-    const userDetail = { id:localStorage.getItem("anorgcustomerid") };
+    //const userDetail = { id:localStorage.getItem("anorgcustomerid") };
 
-    this.http.post<any[]>('https://localhost:7159/customer/meets', userDetail)
+    this.http.get<any[]>('https://localhost:7159/admin/meets')
       .subscribe(
         response => {
           this.deals=response
