@@ -29,11 +29,31 @@ export class ViewdealComponent implements OnInit {
     } 
   }
   sch(){
-    this.http.post('https://localhost:7159/customer/projectdeal',)
+    this.http.post('https://localhost:7159/admin/dealcall',{id:this.deal.id,time:9})
     .subscribe(response => {
       //localStorage.setItem("anorgcustomerid",this.signupForm.value.email)
       //this.router.navigate(['/homec']);
-      location.href="/#/viewdeal"
+      location.href="/#/deals"
+    }, error => {
+      console.log(error)
+    });
+  }
+  acc(){
+    this.http.post('https://localhost:7159/admin/acceptproject',{id:this.deal.id})
+    .subscribe(response => {
+      //localStorage.setItem("anorgcustomerid",this.signupForm.value.email)
+      //this.router.navigate(['/homec']);
+      location.href="/#/projects"
+    }, error => {
+      console.log(error)
+    });
+  }
+  can(){
+    this.http.post('https://localhost:7159/admin/projectdealstatus',{id:this.deal.id,status:"cancled"})
+    .subscribe(response => {
+      //localStorage.setItem("anorgcustomerid",this.signupForm.value.email)
+      //this.router.navigate(['/homec']);
+      location.href="/#/deals"
     }, error => {
       console.log(error)
     });

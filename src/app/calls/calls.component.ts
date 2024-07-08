@@ -21,7 +21,7 @@ export class CallsComponent implements OnInit{
     this.http.get<any[]>('https://localhost:7159/admin/calls')
       .subscribe(
         response => {
-          this.deals = response;
+          this.deals = response.reverse();
           console.log(response);
         },
         error => {
