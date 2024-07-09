@@ -13,11 +13,10 @@
             <thead class="text-nowrap text-truncate">
             <tr>
               <th class="bg-body-tertiary text-center">SI NO</th>
-              <th class="bg-body-tertiary text-center">Catogory</th>
-              <th class="bg-body-tertiary text-center">Status</th>
-              <th class="bg-body-tertiary text-center">CustomerID</th>
-              <th class="bg-body-tertiary text-center">ProjectId</th>
-              <th class="bg-body-tertiary text-center">Time</th>
+              <th class="bg-body-tertiary text-center">CustomerId</th>
+              <th class="bg-body-tertiary text-center">Level</th>
+              <th class="bg-body-tertiary text-center">Name</th>
+              <th class="bg-body-tertiary text-center">Phone</th>
             </tr>
         </thead>
 
@@ -28,19 +27,16 @@
                         <div>{{i+1}}</div>
                       </td>
                   <td class="text-center">
-                    <div>{{ deal.catogory}}</div>
+                    <div>{{ deal.id}}</div>
                   </td>
                   <td class="text-center">
-                    <div>{{ deal.status}}</div>
+                    <div>{{ deal.isClient ? 'Client' : 'Guest' }}</div>
                   </td>
                   <td class="text-center">
-                    <div>{{ deal.customerId}}</div>
+                    <div>{{ deal.name}}</div>
                   </td>
                   <td class="text-center">
-                    <div>{{ deal.projectId}}</div>
-                  </td>
-                  <td class="text-center">
-                    <div>{{ deal.time}}</div>
+                    <div>{{ deal.phone}}</div>
                   </td>
               }
             </tbody>

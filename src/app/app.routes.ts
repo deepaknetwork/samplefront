@@ -15,6 +15,7 @@ export const routes: Routes = [
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/routes').then((m) => m.routes)
       },
+   
       {
         path: 'theme',
         loadChildren: () => import('./views/theme/routes').then((m) => m.routes)
@@ -23,6 +24,11 @@ export const routes: Routes = [
         path: 'deals',
         loadComponent: () => import('./deals/deals.component').then((m) => m.DealsComponent),
         title:'AnOrg - deals'
+      },
+      {
+        path: 'deploys',
+        loadComponent: () => import('./deploys/deploys.component').then((m) => m.DeploysComponent),
+         title:'AnOrg - deals'
       },
       {
         path: 'newdeal',
@@ -43,6 +49,10 @@ export const routes: Routes = [
         loadComponent: () => import('./viewproject/viewproject.component').then((m) => m.ViewprojectComponent)
       },
       {
+        path: 'editproject',
+        loadComponent: () => import('./editproject/editproject.component').then((m) => m.EditprojectComponent)
+      },
+      {
         path: 'meets',
         loadComponent: () => import('./meets/meets.component').then((m) => m.MeetsComponent)
       },
@@ -53,6 +63,18 @@ export const routes: Routes = [
       {
         path: 'profile',
         loadComponent: () => import('./profile/profile.component').then((m) => m.ProfileComponent)
+      },
+      {
+        path: 'customers',
+        loadComponent: () => import('./customers/customers.component').then((m) => m.CustomersComponent)
+      },
+      {
+        path: 'admins',
+        loadComponent: () => import('./admins/admins.component').then((m) => m.AdminsComponent)
+      },
+      {
+        path: 'view',
+        loadComponent: () => import('./view/view.component').then((m) => m.ViewComponent)
       },
       {
         path: 'base',

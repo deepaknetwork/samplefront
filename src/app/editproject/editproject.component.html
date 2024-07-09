@@ -1,0 +1,62 @@
+<section class="vh-80" style="background-color: #f4f5f7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 mb-4 mb-lg-0">
+        <div class="card mb-3" style="border-radius: .5rem;">
+          <div class="row g-0">
+            <div class="col-md-12">
+              <div class="card-body p-4">
+                <h3 style="text-align: center;">Project Details</h3>
+                <hr class="mt-0 mb-4">
+
+                <form [formGroup]="projectForm" (ngSubmit)="edit()">
+                  <div class="col-12 mb-3">
+                    <h4>Project Id</h4>
+                    <input class="form-control" formControlName="id" />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h4>Status</h4>
+                    <input class="form-control" formControlName="state" />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h4>Description</h4>
+                    <input class="form-control" formControlName="discription" />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h4>Contact Medium</h4>
+                    <input class="form-control" formControlName="contactMedium" />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h4>Platform</h4>
+                    <input class="form-control" formControlName="platforms" />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h4>Technology</h4>
+                    <input class="form-control" formControlName="technologies" />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h4>Integrations</h4>
+                    <input class="form-control" formControlName="integrations" />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h4>Stakeholders</h4>
+                    <input class="form-control" formControlName="stakeholders" />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <h4>Budget</h4>
+                    <input class="form-control" formControlName="budget" />
+                  </div>
+                  
+                  <div class="d-flex" style="justify-content: space-around;">
+                    <button class="btn btn-primary" type="submit">Update</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

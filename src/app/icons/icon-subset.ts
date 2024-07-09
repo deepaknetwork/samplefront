@@ -4,7 +4,10 @@ import {
   cilMobile,
   cilMonitor,
   cilCode,
-  cilMenu
+  cilMenu,
+  cilChartLine,
+  cilGroup,
+  cilCloud
 } from '@coreui/icons';
 
 export const iconSubset = {
@@ -13,7 +16,10 @@ export const iconSubset = {
   cilMobile,
   cilMonitor,
   cilCode,
-  cilMenu
+  cilMenu,
+  cilChartLine,
+  cilGroup,
+  cilCloud
 };
 
 export enum IconSubset {
@@ -21,7 +27,10 @@ export enum IconSubset {
   cilHandshake='cilHandshake',
   cilMobile='cilMobile',
   cilMonitor='cilMonitor',
-  cilMenu='cilMenu'
+  cilMenu='cilMenu',
+  cilChartLine='cilChartLine',
+  cilGroup='cilGroup',
+  cilCloud='cilCloud'
   
 }
 

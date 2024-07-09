@@ -14,6 +14,7 @@
             <tr>
               <th class="bg-body-tertiary text-center">SI NO</th>
               <th class="bg-body-tertiary text-center">Status</th>
+              <th class="bg-body-tertiary text-center">CustomerId</th>
               <th class="bg-body-tertiary text-center">ProjectId</th>
               <th class="bg-body-tertiary text-center">Time</th>
               <th class="bg-body-tertiary text-center">Link</th>
@@ -22,12 +23,16 @@
 
             <tbody>
               @for (deal of deals; track deal.id; let i = $index) {
-                <tr>
+                <tr (click)="deal.status == 'Scheduled' ? openModal(deal) : null"
+                class="clickable-row">
                   <td class="text-center">
                         <div>{{i+1}}</div>
                       </td>
                   <td class="text-center">
                     <div>{{ deal.status}}</div>
+                  </td>
+                  <td class="text-center">
+                    <div>{{ deal.customerId}}</div>
                   </td>
                   <td class="text-center">
                     <div>{{ deal.projectId}}</div>
@@ -45,3 +50,19 @@
       </c-card>
     </c-col>
   </c-row>
+
+
+  <ng-template #verticallyCenteredModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">Call status</h5>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <button type="button" class="btn btn-danger" (click)="modal.dismiss('Close click')">Close</button>
+      <button type="button" class="btn btn-warning">Done</button>
+    </div>
+    <div class="modal-footer">
+      
+    </div>
+  </ng-template>
+  
