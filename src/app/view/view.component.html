@@ -1,1 +1,16 @@
-<p>view works!</p>
+<div class="container" *ngIf="data">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let key of data | keyvalue">
+          <td>{{ key.key }}</td>
+          <td>{{ key.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -47,18 +47,20 @@
 <c-modal #verticallyCenteredModal alignment="center" id="verticallyCenteredModal">
   <c-modal-header>
     <h5 cModalTitle>Scheduling call</h5>
-    <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button> -->
   </c-modal-header>
   <c-modal-body style="display: flex; justify-content: space-around;">
-    <input type="date"/>
-    <input type="time" name="" id="">
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="date">Date:</label>
+        <input id="date" type="date" formControlName="date" required />
+      </div>
+      <div>
+        <label for="time">Time:</label>
+        <input id="time" type="time" formControlName="time" required />
+      </div>
+      <button type="submit" [disabled]="projectForm.invalid" class="btn btn-warning">Submit</button>
+    </form>
   </c-modal-body>
-  <c-modal-footer>
-    <button [cModalToggle]="verticallyCenteredModal.id" cButton  class="btn btn-danger">
-      Close
-    </button>
-    <button cButton class="btn btn-warning" (click)="sch()">Schedule</button>
-  </c-modal-footer>
 </c-modal>
                     <button class="btn btn-warning" (click)="acc()"> Accept</button>
                     <button class="btn btn-danger" (click)="can()"> Cancel</button>

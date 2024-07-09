@@ -1,19 +1,32 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ModalModule } from '@coreui/angular';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormModule, ModalModule } from '@coreui/angular';
 
 @Component({
   selector: 'app-viewproject',
   standalone: true,
-  imports: [CommonModule,ModalModule,HttpClientModule],
+  imports: [CommonModule,ModalModule,HttpClientModule,ReactiveFormsModule,FormModule],
   templateUrl: './viewproject.component.html',
   styleUrl: './viewproject.component.scss'
 })
 export class ViewprojectComponent implements OnInit{
 
   deal: any;
-  constructor(private http: HttpClient) {}
+  projectForm1: FormGroup; 
+  projectForm2: FormGroup; 
+  constructor(private fb: FormBuilder,private http: HttpClient) {
+    this.projectForm1 = this.fb.group({
+      date: ['', Validators.required],
+      time: ['', Validators.required]
+    });
+    this.projectForm2 = this.fb.group({
+      date: ['', Validators.required],
+      time: ['', Validators.required],
+      link: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
     const data = localStorage.getItem("customerviewproject");
@@ -25,6 +38,26 @@ export class ViewprojectComponent implements OnInit{
         console.error('Error parsing localStorage data', e);
       }
     } 
+  }
+  onSubmit() {
+    const dateTimeString = `${this.projectForm1.value.date}T${this.projectForm1.value.time}`;
+
+    this.http.post('https://localhost:7159/admin/projectcall', { id:this.deal.id,time:dateTimeString})
+      .subscribe(response => {
+        console.log('DateTime saved', response);
+      }, error => {
+        console.error('Error saving DateTime', error);
+      });
+  }
+  onSubmit1() {
+    const dateTimeString = `${this.projectForm2.value.date}T${this.projectForm2.value.time}`;
+
+    this.http.post('https://localhost:7159/admin/addmeet', { projectId:this.deal.id,link:this.projectForm2.value.link,time:dateTimeString})
+      .subscribe(response => {
+        console.log('DateTime saved', response);
+      }, error => {
+        console.error('Error saving DateTime', error);
+      });
   }
   call(){
     this.http.post('https://localhost:7159/admin/projectcall',{id:this.deal.id,time:9})

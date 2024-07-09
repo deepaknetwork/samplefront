@@ -56,33 +56,41 @@
     <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button> -->
   </c-modal-header>
   <c-modal-body style="display: flex; justify-content: space-around;">
-    <input type="date"/>
-    <input type="time" name="" id="">
-    <input type="text" placeholder="link">
+    <form [formGroup]="projectForm2" (ngSubmit)="onSubmit1()">
+      <div>
+        <label for="date">Date:</label>
+        <input id="date" type="date" formControlName="date" required />
+      </div>
+      <div>
+        <label for="time">Time:</label>
+        <input id="time" type="time" formControlName="time" required />
+      </div>
+      <div>
+        <label for="link">Link:</label>
+        <input id="link" type="text" formControlName="link" required />
+      </div>
+      <button type="submit" [disabled]="projectForm2.invalid" class="btn btn-warning">Submit</button>
+    </form>
   </c-modal-body>
-  <c-modal-footer>
-    <button [cModalToggle]="mCenteredModal.id" cButton  class="btn btn-danger">
-      Close
-    </button>
-    <button cButton class="btn btn-warning" (click)="meet()">Schedule</button>
-  </c-modal-footer>
+
 </c-modal>
 <button [cModalToggle]="cCenteredModal.id" cButton class="btn btn-primary" >Schedule call</button>
 <c-modal #cCenteredModal alignment="center" id="cCenteredModal">
   <c-modal-header>
     <h5 cModalTitle>Scheduling call</h5>
-    <!-- <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button> -->
+   
   </c-modal-header>
-  <c-modal-body style="display: flex; justify-content: space-around;">
-    <input type="date"/>
-    <input type="time" name="" id="">
-  </c-modal-body>
-  <c-modal-footer>
-    <button [cModalToggle]="cCenteredModal.id" cButton  class="btn btn-danger">
-      Close
-    </button>
-    <button cButton class="btn btn-warning" (click)="call()">Schedule</button>
-  </c-modal-footer>
+  <form [formGroup]="projectForm1" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="date">Date:</label>
+      <input id="date" type="date" formControlName="date" required />
+    </div>
+    <div>
+      <label for="time">Time:</label>
+      <input id="time" type="time" formControlName="time" required />
+    </div>
+    <button type="submit" [disabled]="projectForm1.invalid" class="btn btn-warning">Submit</button>
+  </form>
 </c-modal>
               
 <button class="btn btn-primary" (click)="edit()"> Edit</button>
