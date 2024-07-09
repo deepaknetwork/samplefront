@@ -57,9 +57,9 @@
       <h5 class="modal-title">Call status</h5>
       <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
-    <div class="modal-body">
-      <button type="button" class="btn btn-danger" (click)="modal.dismiss('Close click')">Close</button>
-      <button type="button" class="btn btn-warning">Done</button>
+    <div class="modal-body " style="display: flex; justify-content: space-around;">
+      <button type="button" class="btn btn-success" (click)="modal.dismiss('Close click') stat('Success')">Success</button>
+      <button type="button" class="btn btn-danger" (click)="stat('Failed')">Failed</button>
     </div>
     <div class="modal-footer">
       

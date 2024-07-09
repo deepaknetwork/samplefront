@@ -35,4 +35,7 @@ export class MeetsComponent implements OnInit {
     console.log(deal);
     this.modalService.open(this.verticallyCenteredModal, { centered: true });
   }
+  stat(i:any){
+    console.log(i)
+  }
 }
