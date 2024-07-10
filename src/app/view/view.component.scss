@@ -16,4 +16,54 @@
   th {
     background-color: #f2f2f2;
   }
-  
+  .userdetails{
+    height: 50vh;
+    display: flex;
+  }
+  .userchart{
+    height: 50vh;
+    width: 50vh;
+  }
+  .userdetail{
+    display: flex;
+    height: 50vh;
+    width: 50vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .userdetaildiv{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 30vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .userdetailrow{
+    display: flex;
+    width: 20vh;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .project{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+  }
+  .project1{
+    height: 40vh;
+    width: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ci{
+    height: 40vh;
+    width: 40vh;
+
+  }

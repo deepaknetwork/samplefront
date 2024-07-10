@@ -1,3 +1,27 @@
+<div class="userdetails">
+  <c-chart [data]="c1" type="polarArea" class="userchart"/>
+  <div class="userdetail">
+    <div class="userdetaildiv">
+    <div class="userdetailrow"><h4>Guests -> </h4><h4>{{data.guests}}</h4></div>
+    <div class="userdetailrow"><h4>Clients -> </h4><h4>{{data.clients}}</h4></div>
+    <div class="userdetailrow"><h4>Admins -> </h4><h4>{{data.admins}}</h4></div>
+  </div> 
+ </div>
+  <div class="total">
+   <h3>{{data.guests+data.clients}} People are with us</h3>
+  </div>
+</div>
+
+<div class="project">
+  <div class="project1">
+    <c-chart [data]="c2" type="doughnut" class="ci" />
+  </div>
+  <div class="project1">
+    <c-chart [data]="c3" type="doughnut" class="ci"/>
+  </div>
+</div>
+
+
 <div class="container" *ngIf="data">
     <table>
       <thead>
